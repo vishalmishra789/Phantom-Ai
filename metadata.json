@@ -1,0 +1,6 @@
+{
+  "name": "Phantom AI",
+  "description": "Experiment with advanced Gemini prompting strategies including Expert Architect, Chain of Thought, and Few-Shot prompting for production-grade AI responses.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
