@@ -67,7 +67,7 @@ export default function StrategyConfig({ config, setConfig }: StrategyConfigProp
   ];
 
   return (
-    <div className="flex flex-col gap-4 p-6 border-r border-gray-100 bg-white h-full w-full max-w-xs shrink-0 overflow-y-auto">
+    <div className="flex flex-col gap-4 p-4 md:p-6 border-r border-gray-100 bg-white h-full w-full max-w-xs shrink-0 overflow-y-auto">
       <div className="mb-4">
         <h2 className="text-xl font-bold text-gray-900 tracking-tight">Phantom AI Labs</h2>
         <p className="text-sm text-gray-500 mt-1">Configure the Meta Prompt layer</p>
