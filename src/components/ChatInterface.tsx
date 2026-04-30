@@ -85,15 +85,15 @@ export default function ChatInterface({ config }: ChatInterfaceProps) {
       {/* Scrollable area */}
       <div 
         ref={scrollRef}
-        className="flex-1 overflow-y-auto px-6 py-8 space-y-6"
+        className="flex-1 overflow-y-auto px-4 md:px-6 py-4 md:py-8 space-y-4 md:space-y-6"
       >
         <MessageList messages={messages} />
         {isLoading && (
-          <div className="flex gap-4 max-w-3xl">
+          <div className="flex gap-3 md:gap-4 max-w-3xl">
              <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center shrink-0">
                <Loader2 size={16} className="text-blue-600 animate-spin" />
              </div>
-             <div className="p-4 rounded-2xl bg-white border border-gray-100 text-gray-500 animate-pulse">
+             <div className="p-3 md:p-4 rounded-2xl bg-white border border-gray-100 text-gray-500 animate-pulse text-sm md:text-base">
                 Thinking...
              </div>
           </div>
@@ -101,14 +101,14 @@ export default function ChatInterface({ config }: ChatInterfaceProps) {
       </div>
 
       {/* Input area */}
-      <div className="p-6 bg-white border-t border-gray-100 shadow-sm">
+      <div className="p-4 md:p-6 bg-white border-t border-gray-100 shadow-sm safe-p">
         <div className="max-w-4xl mx-auto">
           {selectedImage && (
-            <div className="mb-4 relative inline-block">
+            <div className="mb-3 md:mb-4 relative inline-block">
               <img 
                 src={`data:${selectedImage.mimeType};base64,${selectedImage.data}`} 
                 alt="Selected" 
-                className="h-24 w-auto rounded-lg border border-gray-200 shadow-sm"
+                className="h-20 md:h-24 w-auto rounded-lg border border-gray-200 shadow-sm"
               />
               <button 
                 onClick={() => setSelectedImage(null)}
@@ -119,12 +119,12 @@ export default function ChatInterface({ config }: ChatInterfaceProps) {
             </div>
           )}
           
-          <div className="flex items-end gap-3 bg-gray-50 rounded-2xl p-2 border border-gray-200 focus-within:border-blue-300 focus-within:ring-2 focus-within:ring-blue-100 transition-all">
+          <div className="flex items-end gap-2 md:gap-3 bg-gray-50 rounded-2xl p-1.5 md:p-2 border border-gray-200 focus-within:border-blue-300 focus-within:ring-2 focus-within:ring-blue-100 transition-all">
             <button 
               onClick={() => fileInputRef.current?.click()}
-              className="p-2.5 text-gray-400 hover:text-blue-500 hover:bg-white rounded-xl transition-all"
+              className="p-2 md:p-2.5 text-gray-400 hover:text-blue-500 hover:bg-white rounded-xl transition-all"
             >
-              <ImagePlus size={22} />
+              <ImagePlus size={22} className="md:w-6 md:h-6 w-5 h-5" />
             </button>
             <input 
               type="file" 
@@ -152,13 +152,13 @@ export default function ChatInterface({ config }: ChatInterfaceProps) {
               onClick={handleSend}
               disabled={(!input.trim() && !selectedImage) || isLoading}
               className={cn(
-                "p-2.5 rounded-xl transition-all",
+                "p-2 md:p-2.5 rounded-xl transition-all",
                 input.trim() || selectedImage 
                   ? "bg-blue-600 text-white shadow-md hover:bg-blue-700 active:scale-95" 
                   : "bg-gray-200 text-gray-400 cursor-not-allowed"
               )}
             >
-              <Send size={20} />
+              <Send size={20} className="md:w-5 md:h-5 w-4 h-4" />
             </button>
           </div>
           <p className="text-[10px] text-gray-400 mt-2 text-center">
